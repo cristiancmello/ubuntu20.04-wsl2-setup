@@ -27,3 +27,21 @@ In Windows Desktop, create:
 3. **Environment template** (to edit or auto generate)
 
 * [env.bat.example](https://gist.githubusercontent.com/kikokoder/56926f32078236bc4bed95fb6c197782/raw/a5a3465a314600c68c64c81dd911069535278a17/env.bat.example)
+
+## Softwares:
+
+- PyPI
+- Miniconda3
+- Conda packages: pandas, jupyterlab, jupyter notebook, voila, ipython
+- PHP7
+- PHP-CLI
+- PHP7 Extensions: common, bz2, imap, intl, bcmath, json, mbstring, soap, sybase, xsl, zip (other as mysql already installed)
+- Composer
+- NVM
+- NodeJS 12 LTS (npm, Yarn)
+- Open Java JRE (default version, ~11)
+- Open Java JDK (default version, ~11)
+- SDKMAN
+- Gradle 6.6
+- .NET Core 3.1 Runtime (Full, ASP.NET app support added)
+- .NET Core 3.1 SDK
