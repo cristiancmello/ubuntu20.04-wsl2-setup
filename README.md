@@ -1,7 +1,13 @@
-# ubuntu20.04-wsl2-setup
-Basic Setup for Ubuntu 20.04 LTS in WSL2
+# Ubuntu 20.04 LTS WSL2 Setup
+Basic Setup for Ubuntu 20.04 LTS in WSL2.
 
 Access to MS Store and search by **Ubuntu 20.04** app. After that, click on Ubuntu Icon and start installation. **Set up your username and password and close the window then terminated**.
+
+## Setting up Memory Consumption
+
+Download .wslconfig to Home's Windows folder (Rename to **.wslconfig**). Execute the instructions are into the file.
+
+[.wslconfig](https://gist.githubusercontent.com/kikokoder/3a1f7a2447c1bc09f1059dca9fd86d80/raw/6840301502a76fafeacebee8c2fd1040f6d07140/.wslconfig)
 
 ## Creating Basic Scripts
 
