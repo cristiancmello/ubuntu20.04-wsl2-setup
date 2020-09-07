@@ -1,0 +1,5 @@
+[wsl2]
+memory=2GB
+
+# After editing this file, execute the code below with PowerShell as Admin
+# PS> Restart-Service LxssManager
