@@ -23,7 +23,8 @@ sudo apt -y install \
   libffi-dev \
   liblzma-dev \
   python-openssl \
-  git
+  git \
+  direnv
 
 install_python3_pip() {
   sudo apt install -y python3-pip
@@ -131,6 +132,10 @@ install_dotnet_runtime() {
   sudo apt-get install -y dotnet-runtime-3.1
 }
 
+setup_direnv_bash() {
+  echo "eval \"$(direnv hook bash)\"" >> ~/.bashrc
+}
+
 mkdir -p Ubuntu-20.04-BasicSetup
 
 echo "Installing Miniconda3 Package Tool..."
@@ -171,3 +176,6 @@ install_dotnet_sdk > Ubuntu-20.04-BasicSetup/dotnet_sdk_install.log
 
 echo "Installing .NET Core 3.1 Runtime..."
 install_dotnet_runtime > Ubuntu-20.04-BasicSetup/dotnet_runtime_install.log
+
+echo "Setup direnv..."
+setup_direnv_bash
