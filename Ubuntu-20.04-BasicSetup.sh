@@ -133,7 +133,7 @@ install_dotnet_runtime() {
 }
 
 setup_direnv_bash() {
-  echo "eval \"$(direnv hook bash)\"" >> ~/.bashrc
+  echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 }
 
 mkdir -p Ubuntu-20.04-BasicSetup
