@@ -24,7 +24,8 @@ sudo apt -y install \
   liblzma-dev \
   python-openssl \
   git \
-  direnv
+  direnv \
+  jq
 
 install_python3_pip() {
   sudo apt install -y python3-pip
