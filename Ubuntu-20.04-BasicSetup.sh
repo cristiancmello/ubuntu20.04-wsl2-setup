@@ -53,10 +53,8 @@ install_php7() {
   sudo apt install -y \
     openssl \
     php-pear \
-    php-cli \
-    php7.4-dev \
     php7.4 \
-    php7.4-{common,bz2,imap,intl,bcmath,json,mbstring,soap,sybase,xsl,zip}
+    php7.4-{dev,cli,bcmath,common,bz2,imap,intl,json,mbstring,soap,sybase,xsl,zip,mysql,sqlite3}
 }
 
 install_composer() {
@@ -144,6 +142,10 @@ setup_direnv_bash() {
   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 }
 
+apt_autoremove() {
+  sudo apt autoremove
+}
+
 mkdir -p Ubuntu-20.04-BasicSetup
 
 echo "Installing Miniconda3 Package Tool..."
@@ -184,6 +186,9 @@ install_dotnet_sdk > Ubuntu-20.04-BasicSetup/dotnet_sdk_install.log
 
 echo "Installing .NET Core 3.1 Runtime..."
 install_dotnet_runtime > Ubuntu-20.04-BasicSetup/dotnet_runtime_install.log
+
+echo "APT Autoremove..."
+apt_autoremove > Ubuntu-20.04-BasicSetup/apt_autoremove.log
 
 echo "Setup direnv..."
 setup_direnv_bash
