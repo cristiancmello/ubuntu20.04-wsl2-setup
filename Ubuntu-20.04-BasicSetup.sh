@@ -52,6 +52,7 @@ install_python_conda_packages() {
 install_php7() {
   sudo apt install -y \
     openssl \
+    php-pear \
     php-cli \
     php7.4 \
     php7.4-{common,bz2,imap,intl,bcmath,json,mbstring,soap,sybase,xsl,zip}
@@ -113,7 +114,7 @@ install_sdkman() {
 install_gradle() {
   export_sdkman_init
 
-  sdk install gradle >=6
+  sdk install gradle
   gradle --version
 }
 
