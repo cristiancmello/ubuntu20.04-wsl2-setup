@@ -1,0 +1,74 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "dracula-theme.theme-dracula",
+      "ritwickdey.liveserver",
+      "esbenp.prettier-vscode",
+      "vscode-icons-team.vscode-icons",
+      "ms-vscode-remote.remote-ssh",
+      "hookyqr.beautify",
+      "dbaeumer.vscode-eslint",
+      "davidanson.vscode-markdownlint",
+      "vscjava.vscode-java-pack",
+      "tabnine.tabnine-vscode",
+      "ms-dotnettools.csharp",
+      "bmewburn.vscode-intelephense-client",
+      "felixfbecker.php-debug"
+    ]
+  },
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.rulers": [110, 120],
+    "editor.renderWhitespace": "all",
+    "eslint.codeActionsOnSave.mode": "all",
+    "prettier.trailingComma": "all",
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.iconTheme": "vscode-icons",
+    "files.eol": "\n",
+    "explorer.confirmDelete": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[html]": {
+      "editor.suggest.insertMode": "replace",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "[java]": {
+      "editor.autoIndent": "full",
+      "editor.tabSize": 2,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true
+    },
+    "[css]": {
+      "editor.tabSize": 2,
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "editor.suggest.insertMode": "replace",
+      "editor.formatOnSave": true
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.colorTheme": "Dracula",
+    "java.configuration.updateBuildConfiguration": "automatic"
+  }
+}
