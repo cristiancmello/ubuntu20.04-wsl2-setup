@@ -1,0 +1,9 @@
+@echo off
+set os_name=Ubuntu-20.04
+set workspace_folder_name=workspace
+set workspace_path=~/%workspace_folder_name%
+set github_vscode_workspace_file=https://raw.githubusercontent.com/cristiancmello/ubuntu20.04-wsl2-setup/master/vscode.code-workspace
+
+wsl -d %os_name% mkdir -p %workspace_path%
+wsl -d %os_name% wget -nc %github_vscode_workspace_file% -P %workspace_path%
+wsl -d %os_name% code ~/%workspace_folder_name%/vscode.code-workspace
