@@ -18,7 +18,8 @@
       "tabnine.tabnine-vscode",
       "ms-dotnettools.csharp",
       "bmewburn.vscode-intelephense-client",
-      "felixfbecker.php-debug"
+      "felixfbecker.php-debug",
+      "editorconfig.editorconfig"
     ]
   },
   "settings": {
