@@ -54,6 +54,7 @@ install_php7() {
     openssl \
     php-pear \
     php-cli \
+    php7.4-dev \
     php7.4 \
     php7.4-{common,bz2,imap,intl,bcmath,json,mbstring,soap,sybase,xsl,zip}
 }
