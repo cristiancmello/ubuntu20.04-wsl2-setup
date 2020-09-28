@@ -19,14 +19,14 @@ In Windows Desktop, create:
 
 2. **Workspace.bat**
 
-* [Workspace.bat.example](https://gist.githubusercontent.com/kikokoder/d29c36f7ab927c0a360a016602fe019c/raw/da93c711c314c23011a76f3a20c1e05104612d5a/Workspace.bat.example)
+* [workspace.bat.example](https://raw.githubusercontent.com/cristiancmello/ubuntu20.04-wsl2-setup/master/workspace.bat.example)
 
 - After download, edit and put `os_name=Ubuntu-20.04`
 - Install Recommendations of vscode
 
 3. **Environment template** (to edit or auto generate)
 
-* [env.bat.example](https://gist.githubusercontent.com/kikokoder/56926f32078236bc4bed95fb6c197782/raw/a5a3465a314600c68c64c81dd911069535278a17/env.bat.example)
+* [env.bat.example](https://raw.githubusercontent.com/cristiancmello/ubuntu20.04-wsl2-setup/master/env.bat.example)
 
 ## Softwares:
 
