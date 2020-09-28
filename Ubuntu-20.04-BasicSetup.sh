@@ -66,6 +66,7 @@ install_composer() {
   sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
   
   rm -f composer-setup.php
+  export_composer_binpaths
 }
 
 install_nvm() {
@@ -77,6 +78,10 @@ export_nvm_dir() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+
+export_composer_binpaths() {
+  echo 'export PATH=$PATH:~/.config/composer/vendor/bin' >> ~/.bashrc
 }
 
 install_nodejs_12_lts() {
