@@ -146,6 +146,13 @@ apt_autoremove() {
   sudo apt autoremove
 }
 
+xserver_envs() {
+cat << EOF >> ~/.bashrc
+export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=1
+EOF
+}
+
 mkdir -p Ubuntu-20.04-BasicSetup
 
 echo "Installing Miniconda3 Package Tool..."
@@ -192,3 +199,6 @@ apt_autoremove > Ubuntu-20.04-BasicSetup/apt_autoremove.log
 
 echo "Setup direnv..."
 setup_direnv_bash
+
+echo "Setup X server variables"
+xserver_envs
