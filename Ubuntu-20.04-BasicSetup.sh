@@ -161,6 +161,37 @@ install_geckodriver() {
   fi
 }
 
+install_chromedriver() {
+  CHROMEDRIVER_VERSION=85.0.4183.87
+  CHROMEDRIVER_OS_ARCH=linux64
+  CHROMEDRIVER_ZIP_FILENAME="chromedriver_${CHROMEDRIVER_OS_ARCH}.zip"
+  CHROMEDRIVER_BIN_FILENAME=chromedriver
+
+  GH_URL="https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/${CHROMEDRIVER_ZIP_FILENAME}"
+
+  if [[ -z `which $CHROMEDRIVER_BIN_FILENAME` ]]; then
+    wget "$GH_URL"
+    unzip "$CHROMEDRIVER_ZIP_FILENAME"
+    sudo mv "$CHROMEDRIVER_BIN_FILENAME" /usr/local/bin/
+    rm -f "$CHROMEDRIVER_ZIP_FILENAME"
+  else
+    echo "Google ChromeDriver already installed."
+  fi
+}
+
+install_browsers() {
+  CHROME_VERSION=85.0.4183.121-1
+  CHROME_DEB_NAME=google-chrome-stable_current_amd64.deb
+  CHROME_URL="http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb"
+
+  # Chrome
+  wget "$CHROME_URL"
+  sudo apt install -y ./"$CHROME_DEB_NAME"
+
+  # Firefox
+  sudo apt install -y firefox
+}
+
 setup_direnv_bash() {
   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 }
@@ -217,8 +248,14 @@ install_dotnet_sdk > "$INSTALLATION_LOG_DIR/dotnet_sdk_install.log"
 echo "Installing .NET Core 3.1 Runtime..."
 install_dotnet_runtime > "$INSTALLATION_LOG_DIR/dotnet_runtime_install.log"
 
+echo 'Installing Browsers: Chrome and Firefox...'
+install_browsers > "$INSTALLATION_LOG_DIR/browsers_install.log"
+
 echo "Installing Mozilla Geckodriver..."
 install_geckodriver > "$INSTALLATION_LOG_DIR/geckodriver_install.log"
+
+echo "Installing Google ChromeDriver..."
+install_chromedriver > "$INSTALLATION_LOG_DIR/chromedriver_install.log"
 
 echo "APT Autoremove..."
 apt_autoremove > "$INSTALLATION_LOG_DIR/apt_autoremove.log"
