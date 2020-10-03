@@ -181,8 +181,8 @@ install_chromedriver() {
 
 install_browsers() {
   CHROME_VERSION=85.0.4183.121-1
-  CHROME_DEB_NAME=google-chrome-stable_current_amd64.deb
-  CHROME_URL="http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb"
+  CHROME_DEB_NAME=google-chrome-stable_${CHROME_VERSION}_amd64.deb
+  CHROME_URL="http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/${CHROME_DEB_NAME}"
 
   # Chrome
   wget "$CHROME_URL"
