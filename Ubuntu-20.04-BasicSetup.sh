@@ -27,6 +27,7 @@ sudo apt -y install \
   liblzma-dev \
   python-openssl \
   git \
+  git-flow \
   direnv \
   jq
 
