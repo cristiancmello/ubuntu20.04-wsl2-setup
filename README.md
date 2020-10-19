@@ -1,7 +1,9 @@
 # Ubuntu 20.04 LTS WSL2 Setup
 Basic Setup for Ubuntu 20.04 LTS in WSL2.
 
-Access to MS Store and search by **Ubuntu 20.04** app. After that, click on Ubuntu Icon and start installation. **Set up your username and password and close the window then terminated**.
+* Access to MS Store and search by **Ubuntu 20.04** app. After that, click on Ubuntu Icon and start installation. **Set up your username and password and close the window then terminated**.
+
+* Download [Windows Terminal App](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
 
 ## Setting up Memory Consumption
 
