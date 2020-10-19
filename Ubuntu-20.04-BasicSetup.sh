@@ -3,7 +3,7 @@
 CONDA_BIN=~/miniconda3/condabin/conda
 INSTALLATION_LOG_DIR=logs
 
-sudo apt update && sudo apt upgrade -y
+sudo apt update #&& sudo apt upgrade -y
 
 # Install basic packages
 sudo apt -y install \
@@ -27,9 +27,9 @@ sudo apt -y install \
   liblzma-dev \
   python-openssl \
   git \
-  git-flow \
   direnv \
-  jq
+  jq \
+  zsh
 
 install_python3_pip() {
   sudo apt install -y python3-pip
@@ -191,10 +191,14 @@ install_browsers() {
 
   # Firefox
   sudo apt install -y firefox
+
+  # Delete Chrome's .deb
+  rm -f "$CHROME_DEB_NAME"
 }
 
-setup_direnv_bash() {
+setup_direnv() {
   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+  echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 }
 
 apt_autoremove() {
@@ -202,10 +206,31 @@ apt_autoremove() {
 }
 
 xserver_envs() {
+# BASH
 cat << EOF >> ~/.bashrc
 export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=1
 EOF
+
+# ZSH
+cat << EOF >> ~/.zshrc
+export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=1
+EOF
+}
+
+make_zshellasdefault() {
+  chsh -s $(which zsh)
+}
+
+setup_ohmyzsh() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+}
+
+setup_powerlevel10k() {
+  rm -rf ~/powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 }
 
 mkdir -p "$INSTALLATION_LOG_DIR"
@@ -261,8 +286,13 @@ install_chromedriver > "$INSTALLATION_LOG_DIR/chromedriver_install.log"
 echo "APT Autoremove..."
 apt_autoremove > "$INSTALLATION_LOG_DIR/apt_autoremove.log"
 
-echo "Setup direnv..."
-setup_direnv_bash
+echo "Setup Oh My ZSH and Powerlevel10k"
+setup_ohmyzsh
+setup_powerlevel10k
+make_zshellasdefault
 
 echo "Setup X server variables"
 xserver_envs
+
+echo "Setup direnv..."
+setup_direnv
