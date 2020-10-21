@@ -30,6 +30,10 @@ sudo apt -y install \
   direnv \
   jq \
   zsh
+  
+install_ruby() {
+  sudo apt install -y ruby
+}
 
 install_python3_pip() {
   sudo apt install -y python3-pip
@@ -93,6 +97,10 @@ install_nodejs_12_lts() {
 install_yarn() {
   npm i -g yarn
   yarn --version
+}
+
+install_rake() {
+  sudo gem install rake
 }
 
 install_java_jre() {
@@ -234,6 +242,12 @@ setup_powerlevel10k() {
 }
 
 mkdir -p "$INSTALLATION_LOG_DIR"
+
+echo "Installing Ruby..."
+install_ruby > "$INSTALLATION_LOG_DIR/ruby_install.log"
+
+echo "Installing Rake tool..."
+install_rake > "$INSTALLATION_LOG_DIR/rake_install.log"
 
 echo "Installing Miniconda3 Package Tool..."
 install_miniconda > "$INSTALLATION_LOG_DIR/miniconda_install.log"
